@@ -139,6 +139,7 @@
     }
 
     .menu-number-of-order {
+        flex-shrink: 0;
         color: $booking-color-text5;
 
         em {

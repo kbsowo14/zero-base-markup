@@ -18,3 +18,10 @@
         display: none;
     }
 }
+
+// 팝업이 떠있을떄 body 스크롤 잠그는 방법
+body.scroll-off {
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
