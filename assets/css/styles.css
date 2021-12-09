@@ -855,9 +855,27 @@ body.scroll-off {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 0;
   overflow: hidden;
+  z-index: 1;
+}
+
+.option-popup-area.show {
+  height: 100%;
   z-index: 5000;
+}
+
+.option-popup-area.show .dimmed-layer {
+  opacity: 1;
+}
+
+.option-popup-area.show .menu-option-popup {
+  transform: translateY(0);
+}
+
+.option-popup-area .dimmed-layer {
+  position: absolute;
+  opacity: 0;
 }
 
 .option-popup-area .menu-option-popup {
@@ -869,6 +887,8 @@ body.scroll-off {
   max-height: calc(100% - 45px);
   background-color: #f4f7f9;
   z-index: 10000;
+  transform: translateY(110%);
+  transition: transform 0.3s ease;
 }
 
 .option-popup-area .content-top-pattern {
@@ -1487,6 +1507,12 @@ body.scroll-off {
   font-weight: 700;
   color: #333;
   letter-spacing: -0.3px;
+}
+
+.menu-list-area .btn-toggle {
+  display: flex;
+  margin: -16px;
+  padding: 16px;
 }
 
 .menu-list-area .period {
@@ -2133,6 +2159,12 @@ body.scroll-off {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 9998;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dimmed-layer.hidden {
+  opacity: 0;
 }
 
 .dimmed-layer.light {
